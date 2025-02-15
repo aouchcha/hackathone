@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/profil.css">
+    <title>Association Profile</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <!-- New Header Section -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/logo.png" alt="App Logo" class="header-logo">
+            </div>
+
+            <nav class="nav-links">
+                <a href="/" class="nav-link active">Home</a>
+                <button class="logout-btn">Logout</button>
+            </nav>
+
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+    <main>
+        <div class="association-container">
+            <div class="header-section">
+                <img src="/src/association.jpg" alt="Association Logo" class="association-logo">
+                <div class="header-info">
+                    <h1 class="association-name">Hope Association for Social Development</h1>
+                    <div class="association-specialty">Social Development & Education</div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Beneficiaries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Volunteers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">Completed Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">About Us</h2>
+                <p>Hope Association for Social Development is a non-profit organization established in 2015, aimed at
+                    improving the lives of individuals and communities through sustainable development programs in
+                    education, health, and economic empowerment. We work closely with local communities to identify
+                    their needs and develop innovative solutions that suit their circumstances.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Our Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="/src/image/ContinuousEducationProject.jpg" alt="Continuous Education Project"
+                            class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">Continuous Education Project</h3>
+                            <div class="project-date">January 2024</div>
+                            <p>Providing free tutoring for school students in remote areas</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/src/image/test.png" alt="Economic Empowerment Project" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">Economic Empowerment Project</h3>
+                            <div class="project-date">March 2024</div>
+                            <p>Training and funding small projects for youth and women</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="/src/image/images.png" alt="Health for All Campaign" class="project-image">
+                        <div class="project-info">
+                            <h3 class="project-title">Health for All Campaign</h3>
+                            <div class="project-date">February 2024</div>
+                            <p>Organizing free medical caravans in villages and remote areas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
