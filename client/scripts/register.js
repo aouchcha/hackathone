@@ -1,5 +1,0 @@
-
-
-function lo(params) {
-    
-}
