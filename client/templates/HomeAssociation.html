@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association Home</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .home {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation styles */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #5a5a5a;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #5742a7;
+        }
+
+        .logout {
+            background-color: transparent;
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* Create post section */
+        .create-posts {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .create-posts h2 {
+            color: #5742a7;
+            margin-bottom: 10px;
+        }
+
+        .Post-title, .Post-content {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .Post-content {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .butt {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .publish, .cancel {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .publish {
+            background-color: #5742a7;
+            border: none;
+            color: white;
+        }
+
+        .publish:hover {
+            background-color: #493694;
+        }
+
+        .cancel {
+            background-color: #f1f1f1;
+            border: none;
+            color: #555;
+        }
+
+        .cancel:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Main app container - Three column layout */
+        .app {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+        }
+
+        /* Left column - Volunteer list */
+        .list-volentaire {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .list-volentaire h3 {
+            color: #5742a7;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .list-volentaire p {
+            padding: 8px;
+            margin-bottom: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .list-volentaire p:hover {
+            background-color: #eef1f5;
+        }
+
+        /* Middle column - Posts */
+        .post-containair {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .post-containair h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .post-containair p {
+            color: #555;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .post-containair p:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Right column - Filter and invite list */
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .filter {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter button {
+            width: 100%;
+            padding: 8px;
+            background-color: #f0ebff;
+            border: none;
+            border-radius: 4px;
+            color: #5742a7;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter button:hover {
+            background-color: #e3d7ff;
+        }
+
+        .invite-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .invite-list p {
+            padding: 8px;
+            margin-bottom: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Add accept/reject buttons to invite list */
+        .invite-list p::after {
+            content: "✓";
+            display: inline-block;
+            color: #27ae60;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .invite-list p:hover {
+            background-color: #eef1f5;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .app {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .list-volentaire, .post-containair, .right-side {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .butt {
+                flex-direction: column;
+            }
+            
+            .publish, .cancel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <header class="nav">
+            <a href="/">Home</a>
+            <button class="logout">Logout</button>
+        </header>
+        <div class="create-posts">
+            <h2>Title</h2>
+            <textarea name="Post-title" id="Post-title" class="Post-title" placeholder="Enter Your Title"></textarea>
+            <h2>Content</h2>
+            <textarea name="Post-content" id="Post-content" class="Post-content" placeholder="Enter Your Content"></textarea>
+            <div class="butt">
+                <button class="publish">Publish</button>
+                <button class="cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="app">
+            <div class="list-volentaire">
+                <h3>List Volentaire Chosen</h3>
+                <p>Sarah Johnson</p>
+                <p>Michael Chen</p>
+                <p>Lisa Patel</p>
+            </div>
+            <div class="post-containair">
+                <h1>Community Garden Project</h1>
+                <p>We're looking for volunteers to help plant and maintain our new community garden. No experience necessary, just bring your enthusiasm!</p>
+                <h1>After-School Tutoring</h1>
+                <p>Seeking volunteers to help with our after-school tutoring program for elementary students. Math and English tutors especially needed.</p>
+                <h1>Weekend Food Drive</h1>
+                <p>Join us this weekend to collect and distribute food to families in need. We need help with sorting, packaging, and delivery.</p>
+            </div>
+            <div class="right-side">
+                <div class="filter">
+                    <button>Skills</button>
+                    <button>Age</button>
+                    <button>Location</button>
+                </div>
+                <div class="invite-list">
+                    <p>John Doe</p>
+                    <p>Emma Smith</p>
+                    <p>David Wilson</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
