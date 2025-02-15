@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Volunteer Profile</title>
+   
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/logo.png" alt="App Logo" class="header-logo">
+            </div>
+
+            <nav class="nav-links">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/profile" class="nav-link active">Profile</a>
+                <button class="logout-btn">Logout</button>
+            </nav>
+
+        </div>
+    </header>
+    <main>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="/src/profil.jpg" alt="Profile Picture" class="profile-image">
+            <div class="profile-info">
+                <h1 class="profile-name">Ahmed Mohammed</h1>
+                <div class="profile-basic-info">
+                    <div class="info-item">
+                        <div class="info-label">Age</div>
+                        <div>28 years</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Location</div>
+                        <div>Rabat, Morocco</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2 class="section-title">About Me</h2>
+            <p>Active and enthusiastic volunteer committed to community service. I believe in the importance of voluntary work and its role in community development and improving people's lives.</p>
+        </div>
+
+        <div class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Effective Communication</span>
+                <span class="skill-tag">Teamwork</span>
+                <span class="skill-tag">Event Organization</span>
+                <span class="skill-tag">Training</span>
+            </div>
+        </div>
+
+        <div class="volunteer-section">
+            <h2 class="section-title">Previous Volunteer Work</h2>
+            <ul class="volunteer-history">
+                <li class="volunteer-item">
+                    <div class="volunteer-title">National Tree Planting Campaign</div>
+                    <div class="volunteer-date">March 2024</div>
+                    <p>Participated in a national tree planting campaign to plant 1000 trees in urban areas</p>
+                </li>
+                <li class="volunteer-item">
+                    <div class="volunteer-title">Food Aid Distribution</div>
+                    <div class="volunteer-date">Ramadan 2024</div>
+                    <p>Contributed to distributing food baskets to families in need during Ramadan</p>
+                </li>
+                <li class="volunteer-item">
+                    <div class="volunteer-title">Student Tutoring</div>
+                    <div class="volunteer-date">2023 - 2024</div>
+                    <p>Provided free tutoring in Mathematics and Science for high school students</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<script>
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
