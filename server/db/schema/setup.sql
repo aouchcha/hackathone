@@ -9,6 +9,13 @@ CREATE TABLE IF NOT EXISTS users (
     role TEXT NOT NULL CHECK(role IN ('volontaire', 'company', 'admin'))
 );
 
+CREATE TABLE IF NOT EXISTS admin (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL UNIQUE,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+
+);
+
 -- Volontaire Table --
 CREATE TABLE IF NOT EXISTS volontaire (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
