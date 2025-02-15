@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Home</title>
-    <link rel="stylesheet" href="../style/HomeVolanteaire.css">
+    <link rel="stylesheet" href="/client/styles/HomeVolanteaire.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="home">
-        <header class="nav">
-            <div class="logo">
-                <h1>Volunteer Connect</h1>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="/logo.png" alt="App Logo" class="header-logo">
             </div>
-            <div class="nav-links">
-                <a href="/" class="active">Home</a>
-                <a href="/profile">Profile</a>
-                <a href="/history">History</a>
+
+            <nav class="nav-links">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/profile" class="nav-link active">Profile</a>
                 <button class="logout-btn">Logout</button>
-            </div>
-        </header>
-        
+            </nav>
+
+        </div>
+    </header>
+    <div class="home">
         <main class="app-container">
             <div class="filter-section">
                 <h3>Filter Opportunities</h3>
